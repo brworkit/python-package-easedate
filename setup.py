@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="easy-json2json",
+    name="easydate",
     version="0.0.1",
     author="brworkit",
     author_email="brworkit@gmail.com",
-    description="A package for easy json parse.",
+    description="A package for easy date use in python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/brworkit/python-package-easy-json2json.git",
+    url="https://github.com/brworkit/python-package-easydate.git",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
