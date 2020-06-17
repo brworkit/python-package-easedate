@@ -31,7 +31,8 @@ def _force_parse(str_date):
         try:
             return datetime.strptime(str_date, output_format).date()
         except Exception as e:
-            print(f"format: {output_format} error: {e}")
+            # print(f"format: {output_format} error: {e}")
+            pass
     return str_date
 
 def _formalize(str_date):
