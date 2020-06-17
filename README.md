@@ -41,8 +41,6 @@ is_equal(date, base_date)
 
 # Usage example 
 
-## Some examples
-
 ```python
 
 from easydate.easydate import *
