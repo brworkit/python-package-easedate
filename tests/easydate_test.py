@@ -59,6 +59,9 @@ def test_today_date():
 def test_today_date_name():
     assert today().strftime("%A") == weekday(today())
 
+def test_today_date_name_from_str():
+    assert "Wednesday" == weekday("2020-05-20")
+
 def test_weekday_name():
     assert datetime.strptime("2020-06-01", '%Y-%m-%d').strftime("%A") == "Monday"
 

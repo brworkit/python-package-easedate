@@ -20,12 +20,12 @@ def __force_parse__(str_date):
             return datetime.strptime(str_date, fmt).date()
         except Exception as e:
             print(f"format: {fmt} error: {e}")
-    return None
+    return str_date
 
-def __formalize__(sdate):
-    if isinstance(sdate, str):
-        return datetime.strptime(sdate, '%Y-%m-%d').date()
-    return sdate
+def __formalize__(str_date):
+    if isinstance(str_date, str):
+        return parse(str_date)
+    return str_date
 
 def parse(str_date):
     return __force_parse__(str_date)
@@ -37,6 +37,7 @@ def today():
     return datetime.now().date()
 
 def weekday(date, formatting="%A"):
+    date = __formalize__(date)
     return date.strftime(formatting)
 
 def add_day(date, days):
