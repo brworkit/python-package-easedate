@@ -27,11 +27,11 @@ def _force_parse(str_date):
     culpa qui officia deserunt mollit anim id est laborum.
     Final comments will be added soon.
     """
-    for fmt in _FORMATS:
+    for output_format in _FORMATS:
         try:
-            return datetime.strptime(str_date, fmt).date()
+            return datetime.strptime(str_date, output_format).date()
         except Exception as e:
-            print(f"format: {fmt} error: {e}")
+            print(f"format: {output_format} error: {e}")
     return str_date
 
 def _formalize(str_date):
@@ -76,7 +76,7 @@ def today():
     """
     return datetime.now().date()
 
-def weekday(date, fmt="%A"):
+def weekday(date, output_format="%A"):
     """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -86,7 +86,7 @@ def weekday(date, fmt="%A"):
     Final comments will be added soon.
     """
     date = _formalize(date)
-    return date.strftime(fmt)
+    return date.strftime(output_format)
 
 def add_day(date, value):
     """
