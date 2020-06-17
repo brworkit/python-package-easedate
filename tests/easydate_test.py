@@ -68,6 +68,9 @@ def test_weekday_name():
 def test_weekday_index():
     assert weekday("2020-06-01", "%w") == "1"
 
+def test_weekday_index_bar():
+    assert weekday("22/03/2020", "%w") == "0"
+
 def test_today_date_name_abbreviation():
     assert today().strftime("%a") == weekday(today(), fmt="%a")
 
@@ -76,6 +79,18 @@ def test_add_one_day():
 
 def test_add_two_days():
     assert add_day("2020-06-01", 2) == parse("2020-06-03")
+
+def test_add_one_month():
+    assert add_month("2020-06-01", 1) == parse("2020-07-01")
+
+def test_add_two_months():
+    assert add_month("2020-06-01", 2) == parse("2020-08-01")
+
+def test_add_one_year():
+    assert add_year("2020-06-01", 1) == parse("2021-06-01")
+
+def test_add_two_years():
+    assert add_year("2020-06-01", 2) == parse("2022-06-01")
 
 def test_diff_in_days_zero():
     assert diff_in_days("2020-06-01", "2020-06-01") == 0

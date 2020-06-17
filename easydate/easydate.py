@@ -4,7 +4,7 @@
 
 from datetime import datetime
 from datetime import timedelta
-from dateutil.parser import _parser
+from dateutil.relativedelta import relativedelta
 
 _MONTHS_IN_YEAR = 12
 _TODAY = datetime.date
@@ -88,7 +88,7 @@ def weekday(date, fmt="%A"):
     date = _formalize(date)
     return date.strftime(fmt)
 
-def add_day(date, days):
+def add_day(date, value):
     """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -97,7 +97,32 @@ def add_day(date, days):
     culpa qui officia deserunt mollit anim id est laborum.
     Final comments will be added soon.
     """
-    return _formalize(date) + timedelta(days=days)
+    return _formalize(date) + timedelta(days=value)
+
+
+def add_month(date, value):
+    """
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+    culpa qui officia deserunt mollit anim id est laborum.
+    Final comments will be added soon.
+    """
+    return _formalize(date) + relativedelta(months=value)
+
+
+def add_year(date, value):
+    """
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+    culpa qui officia deserunt mollit anim id est laborum.
+    Final comments will be added soon.
+    """
+    return _formalize(date) + relativedelta(years=value)
+
 
 def diff_in_days(date, base_date = _TODAY):
     """
