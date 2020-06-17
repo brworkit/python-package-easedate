@@ -75,7 +75,7 @@ def test_add_one_day():
     assert add_day("2020-06-01", 1) == parse("2020-06-02")
 
 def test_add_two_days():
-    assert add_day("2020-06-01", 2) == datetime.strptime("2020-06-03", '%Y-%m-%d').date()
+    assert add_day("2020-06-01", 2) == parse("2020-06-03")
 
 def test_diff_in_days_zero():
     assert diff_in_days("2020-06-01", "2020-06-01") == 0
