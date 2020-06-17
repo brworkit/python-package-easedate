@@ -63,16 +63,16 @@ def test_today_date_name_from_str():
     assert "Wednesday" == weekday("2020-05-20")
 
 def test_weekday_name():
-    assert datetime.strptime("2020-06-01", '%Y-%m-%d').strftime("%A") == "Monday"
+    assert weekday("2020-06-01") == "Monday"
 
 def test_weekday_index():
-    assert datetime.strptime("2020-06-01", '%Y-%m-%d').strftime("%w") == "1"
+    assert weekday("2020-06-01", "%w") == "1"
 
 def test_today_date_name_abbreviation():
-    assert today().strftime("%a") == weekday(today(), formatting="%a")
+    assert today().strftime("%a") == weekday(today(), fmt="%a")
 
 def test_add_one_day():
-    assert add_day("2020-06-01", 1) == datetime.strptime("2020-06-02", '%Y-%m-%d').date()
+    assert add_day("2020-06-01", 1) == parse("2020-06-02")
 
 def test_add_two_days():
     assert add_day("2020-06-01", 2) == datetime.strptime("2020-06-03", '%Y-%m-%d').date()

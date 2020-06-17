@@ -36,9 +36,9 @@ def str_to_date(str_date, input_format="%Y-%m-%d", output_format="%F"):
 def today():
     return datetime.now().date()
 
-def weekday(date, formatting="%A"):
+def weekday(date, fmt="%A"):
     date = __formalize__(date)
-    return date.strftime(formatting)
+    return date.strftime(fmt)
 
 def add_day(date, days):
     return __formalize__(date) + timedelta(days=days)
