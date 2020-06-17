@@ -17,7 +17,7 @@ result = str_to_date("22/03/2020", input_format="%d/%m/%Y")
 
 print(result)
 
-# {'first_name': 'Test Name'}
+# 2020-03-22
 
 ```
 

@@ -7,51 +7,51 @@ from easydate.easydate import *
 
 def test_parse_from_dd_mm_yyyy_to_yyyy_mm_dd():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y")
-    assert result == "2020-03-22"
+    assert result == parse("2020-03-22")
 
 def test_parse_from_dd_mm_yyyy_to_yy_mm_dd():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%y-%m-%d")
-    assert result == "20-03-22"
+    assert result == parse("20-03-22")
 
 def test_parse_from_dd_mm_yyyy_to_yyyy_mm_dd_slash():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%Y/%m/%d")
-    assert result == "2020/03/22"
+    assert result == parse("2020/03/22")
 
 def test_parse_from_dd_mm_yyyy_to_yy_mm_dd_slash():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%y/%m/%d")
-    assert result == "20/03/22"
+    assert result == parse("20/03/22")
 
 def test_parse_from_dd_mm_yyyy_to_mm_dd_yyyy():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%m-%d-%Y")
-    assert result == "03-22-2020"
+    assert result == parse("03-22-2020")
 
 def test_parse_from_dd_mm_yyyy_to_mm_dd_yy():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%m-%d-%y")
-    assert result == "03-22-20"
+    assert result == parse("03-22-20")
 
 def test_parse_from_dd_mm_yyyy_to_mm_dd_yyyy_slash():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%m/%d/%Y")
-    assert result == "03/22/2020"
+    assert result == parse("03/22/2020")
 
 def test_parse_from_dd_mm_yyyy_to_mm_dd_yy_slash():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%m/%d/%y")
-    assert result == "03/22/20"
+    assert result == parse("03/22/20")
 
 def test_parse_from_dd_mm_yyyy_to_dd_mm_yyyy():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%d-%m-%Y")
-    assert result == "22-03-2020"
+    assert result == parse("22-03-2020")
 
 def test_parse_from_dd_mm_yyyy_to_dd_mm_yy():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%d-%m-%y")
-    assert result == "22-03-20"
+    assert result == parse("22-03-20")
 
 def test_parse_from_dd_mm_yyyy_to_dd_mm_yyyy_slash():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%d/%m/%Y")
-    assert result == "22/03/2020"
+    assert result == parse("22/03/2020")
 
 def test_parse_from_dd_mm_yyyy_to_dd_mm_yy_slash():
     result = str_to_date("22/03/2020", input_format="%d/%m/%Y", output_format="%d/%m/%y")
-    assert result == "22/03/20"
+    assert result == parse("22/03/20")
 
 def test_today_date():
     assert datetime.now().date() == today()

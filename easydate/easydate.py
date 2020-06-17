@@ -31,7 +31,7 @@ def parse(str_date):
     return __force_parse__(str_date)
 
 def str_to_date(str_date, input_format="%Y-%m-%d", output_format="%F"):
-    return datetime.strptime(str_date, input_format).strftime(output_format)
+    return parse(datetime.strptime(str_date, input_format).strftime(output_format))
 
 def today():
     return datetime.now().date()
