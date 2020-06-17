@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="brworkit",
     author_email="brworkit@gmail.com",
-    description="A package for easy date use in python.",
+    description="A python package for easy date use and conversions.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/brworkit/python-package-easydate.git",
