@@ -6,9 +6,9 @@ from datetime import datetime
 from datetime import timedelta
 from dateutil.parser import _parser
 
-MONTHS_IN_YEAR = 12
-TODAY = datetime.date
-FORMATS = [
+_MONTHS_IN_YEAR = 12
+_TODAY = datetime.date
+_FORMATS = [
     '%Y-%m-%d',
     '%y-%m-%d',
     '%Y/%m/%d',
@@ -18,7 +18,7 @@ FORMATS = [
     "%m/%d/%Y"
 ]
 
-def __force_parse__(str_date):
+def _force_parse(str_date):
     """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -27,14 +27,14 @@ def __force_parse__(str_date):
     culpa qui officia deserunt mollit anim id est laborum.
     Final comments will be added soon.
     """
-    for fmt in FORMATS:
+    for fmt in _FORMATS:
         try:
             return datetime.strptime(str_date, fmt).date()
         except Exception as e:
             print(f"format: {fmt} error: {e}")
     return str_date
 
-def __formalize__(str_date):
+def _formalize(str_date):
     """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -54,7 +54,7 @@ def parse(str_date):
     nisi ut aliquip ex ea commodo consequat.
     Final comments will be added soon.
     """
-    return __force_parse__(str_date)
+    return _force_parse(str_date)
 
 def str_to_date(str_date, input_format="%Y-%m-%d", output_format="%F"):
     """
@@ -85,7 +85,7 @@ def weekday(date, fmt="%A"):
     culpa qui officia deserunt mollit anim id est laborum.
     Final comments will be added soon.
     """
-    date = __formalize__(date)
+    date = _formalize(date)
     return date.strftime(fmt)
 
 def add_day(date, days):
@@ -97,20 +97,20 @@ def add_day(date, days):
     culpa qui officia deserunt mollit anim id est laborum.
     Final comments will be added soon.
     """
-    return __formalize__(date) + timedelta(days=days)
+    return _formalize(date) + timedelta(days=days)
 
-def diff_in_days(date, base_date = TODAY):
+def diff_in_days(date, base_date = _TODAY):
     """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
     nisi ut aliquip ex ea commodo consequat.
     Final comments will be added soon.
     """
-    date = __formalize__(date)
-    base_date = __formalize__(base_date)
+    date = _formalize(date)
+    base_date = _formalize(base_date)
     return abs((date - base_date).days)
 
-def diff_in_months(date, base_date = TODAY):
+def diff_in_months(date, base_date = _TODAY):
     """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -120,23 +120,23 @@ def diff_in_months(date, base_date = TODAY):
     Final comments will be added soon.
     """
     from dateutil import relativedelta
-    date = __formalize__(date)
-    base_date = __formalize__(base_date)
+    date = _formalize(date)
+    base_date = _formalize(base_date)
     result = relativedelta.relativedelta(date, base_date)
-    return abs(result.years * MONTHS_IN_YEAR + result.months)
+    return abs(result.years * _MONTHS_IN_YEAR + result.months)
 
-def diff_in_years(date, base_date = TODAY):
+def diff_in_years(date, base_date = _TODAY):
     """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
     nisi ut aliquip ex ea commodo consequat.
     Final comments will be added soon.
     """
-    date = __formalize__(date)
-    base_date = __formalize__(base_date)
+    date = _formalize(date)
+    base_date = _formalize(base_date)
     return abs(date.year - base_date.year)
 
-def is_after(date, base_date = TODAY):
+def is_after(date, base_date = _TODAY):
     """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -145,22 +145,22 @@ def is_after(date, base_date = TODAY):
     culpa qui officia deserunt mollit anim id est laborum.
     Final comments will be added soon.
     """
-    date = __formalize__(date)
-    base_date = __formalize__(base_date)
+    date = _formalize(date)
+    base_date = _formalize(base_date)
     return date > base_date
 
-def is_before(date, base_date = TODAY):
+def is_before(date, base_date = _TODAY):
     """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
     nisi ut aliquip ex ea commodo consequat.
     Final comments will be added soon.
     """
-    date = __formalize__(date)
-    base_date = __formalize__(base_date)
+    date = _formalize(date)
+    base_date = _formalize(base_date)
     return date < base_date
 
-def is_equal(date, base_date = TODAY):
+def is_equal(date, base_date = _TODAY):
     """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -169,8 +169,8 @@ def is_equal(date, base_date = TODAY):
     culpa qui officia deserunt mollit anim id est laborum.
     Final comments will be added soon.
     """
-    date = __formalize__(date)
-    base_date = __formalize__(base_date)
+    date = _formalize(date)
+    base_date = _formalize(base_date)
     return date == base_date
 
 
