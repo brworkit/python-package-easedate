@@ -1,10 +1,10 @@
-# easydate
+# easedate
     
 ## Description
 A python package for easy date use and conversions.
 
 # Install 
-    pip install easydate
+    pip install easedate
 
 
 # Currently Available functions
@@ -43,7 +43,7 @@ is_equal(date, base_date)
 
 ```python
 
-from easydate.easydate import *
+from easedate.easedate import *
 
 
 result = str_to_date("22/03/2020", input_format="%d/%m/%Y")
@@ -98,7 +98,7 @@ print(result)
 
 ## PyPi
 
-[easydate](https://pypi.org/project/easydate)
+[easedate](https://pypi.org/project/easedate)
 
 ## Author
 

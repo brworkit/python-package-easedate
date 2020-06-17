@@ -1,5 +1,5 @@
 from datetime import datetime
-from easydate.easydate import *
+from easedate.easedate import *
 
 # TODO:
     # Human-intelligible date
