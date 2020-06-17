@@ -1,4 +1,4 @@
-# EasyDate
+# easydate
     
 ## Description
 A python package for easy date use and conversions.
