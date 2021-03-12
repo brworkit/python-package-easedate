@@ -71,7 +71,7 @@ result = weekday("22/03/2020", output_format="%a")
 
 print(result)
 
-# 0 (Sunday is indexed as 0 and Saturday is indexed as 7)
+# 0 (Sunday is indexed as 0 and Saturday is indexed as 6)
 
 
 result = add_day("22/03/2020", value=1)
